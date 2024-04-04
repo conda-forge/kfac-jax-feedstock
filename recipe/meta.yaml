@@ -1,5 +1,5 @@
 {% set name = "kfac-jax" %}
-{% set version = "0.0.5" %}
+{% set version = "0.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kfac-jax-{{ version }}.tar.gz
-  sha256: cf308272aee8148109121af96b2f99221fce40aac5a7f1f5287a0f433a21a1fc
+  sha256: 32b065fe204f6cdd62a2f17b68f32cc863ba1a834034235654893771a7815c7e
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
-  number: 1
+  number: 0
 
 requirements:
   host:
