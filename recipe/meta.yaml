@@ -1,18 +1,19 @@
 {% set name = "kfac-jax" %}
-{% set version = "0.0.6" %}
+{% set version = "0.0.7" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kfac-jax-{{ version }}.tar.gz
-  sha256: 32b065fe204f6cdd62a2f17b68f32cc863ba1a834034235654893771a7815c7e
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 5f0436691bf7673c49e975f6b2cb5156e23199823b55e71c276af4daa19d08a2
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -23,10 +24,10 @@ requirements:
     - python >={{ python_min }}
     - absl-py >=0.12.0
     - immutabledict >=2.2.1
-    - numpy >=1.21
+    - numpy >=1.22
     - distrax >=0.1.3
-    - jax >=0.4.7
-    - jaxlib >=0.4.7
+    - jax >=0.4.27
+    - jaxlib >=0.4.27
     - dm-tree >=0.1.7
     - optax >=0.1.4
     - typing-extensions >=4.2.0
