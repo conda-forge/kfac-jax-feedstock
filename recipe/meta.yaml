@@ -1,5 +1,5 @@
 {% set name = "kfac-jax" %}
-{% set version = "0.0.7" %}
+{% set version = "0.0.8" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 5f0436691bf7673c49e975f6b2cb5156e23199823b55e71c276af4daa19d08a2
+  sha256: 7a95d2081af2319f1314abaec5b808151923c10f5499400f49dead1f01c058cb
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -21,6 +21,7 @@ requirements:
     - pip
     - setuptools
   run:
+    - typing_extensions >=4.0.0
     - python >={{ python_min }}
     - absl-py >=0.12.0
     - immutabledict >=2.2.1
@@ -36,10 +37,7 @@ requirements:
 test:
   imports:
     - kfac_jax
-  commands:
-    - pip check
   requires:
-    - pip
     - python {{ python_min }}
 
 about:
