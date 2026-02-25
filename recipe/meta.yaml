@@ -33,6 +33,7 @@ requirements:
     - optax >=0.1.4
     - typing-extensions >=4.2.0
     - tensorflow-estimator
+    - tensorflow-probability
 
 test:
   imports:
