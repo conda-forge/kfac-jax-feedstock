@@ -41,7 +41,10 @@ tests:
       imports:
         - kfac_jax
       pip_check: false
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
 about:
   summary: A Jax package for approximate curvature estimation and optimization using KFAC.
   license: Apache-2.0
